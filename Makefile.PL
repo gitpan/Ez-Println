@@ -4,9 +4,11 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME              => 'Ez::Println',
-    VERSION_FROM      => 'Println.pm', # finds $VERSION
+    VERSION_FROM      => 'lib/Println.pm', # finds $VERSION
     PREREQ_PM         => {}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'Println.pm', # retrieve abstract from module
+      (ABSTRACT	      => 'Print with new lines; print faster.', # retrieve abstract from module
        AUTHOR         => 'Alexej G. Magura <agm2819@gmail.com>') : ()),
+    LICENSE	      => 'BSD',
+
 );

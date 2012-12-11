@@ -42,24 +42,48 @@ use warnings;
 use Exporter;
 use vars qw(@ISA @EXPORT);
 
-our $VERSION = '0.1.3.2';
+our $VERSION = '0.1.3.3';
 @ISA = qw(Exporter);
-@EXPORT = qw(println printlnf printfln);
+@EXPORT = qw(println printlnf printfln qprint qprintln);
 
 sub println
 {
     print "@_\n";
+    return bless {};
 } # an exported function
 
 
 sub printfln
 {
     printf "@_\n";
+    return bless {};
 }
+
 
 sub printlnf
 {
     printf "@_\n";
+    return bless {};
+}
+
+sub qprint
+{
+    {
+	no warnings;
+    
+	print "@_";
+    }
+    
+    return bless {};
+}
+
+sub qprintln 
+{
+    {
+	no warnings;
+	print "@_\n";
+    }
+    return bless {};
 }
 
 1;
